@@ -27,7 +27,9 @@ Arguments = 5
 这个变量表示存储命令行输入参数的数组。数组的有效索引是从 0 到 ARGC-1。  
 
 ```
-[jerry]$ awk 'BEGIN { for (i = 0; i < ARGC - 1; ++i) { printf "ARGV[%d] = %s\n", i, ARGV[i] } }' one two three four
+[jerry]$ awk 'BEGIN { for (i = 0; i < ARGC - 1; ++i)
+      { printf "ARGV[%d] = %s\n", i, ARGV[i] } 
+                    }' one two three four
 ```  
 
 执行上面的命令可以得到如下的结果：  
