@@ -83,7 +83,11 @@ while (condition)
 顾名思义，break 用以结束循环过程。在下面的示例子中，当计算的和大于 50 的时候使用 break 结束循环过程：  
 
 ```
-[jerry]$ awk 'BEGIN {sum = 0; for (i = 0; i < 20; ++i) { sum += i; if (sum > 50) break; else print "Sum =", sum } }'
+[jerry]$ awk 'BEGIN {
+    sum = 0; for (i = 0; i < 20; ++i) { 
+         sum += i; if (sum > 50) break; else print "Sum =", sum 
+                                      } 
+                    }'
 ```   
 
 执行上面的命令可以得到如下的结果：  
