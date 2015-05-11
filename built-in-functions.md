@@ -1,12 +1,12 @@
-#AWK——内置函数  
+# 内置函数  
 
 AWK 为程序开发者提供了丰富的内置函数。这一章节会讲解 AWK 提供的算术函数、字符串操作函数、时间操作相关的函数、位操作函数以及其它各种各样的函数。  
 
-##算术函数
+## 算术函数
 
 AWK  提供了如下的内置算术运算函数：  
 
-###atan2(y,x)  
+### atan2(y,x)  
 
 该函数返回正切值 y/x 的角度值，角度以弧度为单位。示例如下：  
 
@@ -27,7 +27,7 @@ AWK  提供了如下的内置算术运算函数：
 The arc tangent for (x=-10.000000, y=10.000000) is 135.000000 degrees
 ```  
 
-###cos(expr) 
+### cos(expr) 
 
 该函数返回 expr 的余弦值， 输入参数以弧度为单位。示例如下：  
 
@@ -47,7 +47,7 @@ The arc tangent for (x=-10.000000, y=10.000000) is 135.000000 degrees
 The cosine of 60.000000 degrees is 0.500000.
 ```  
 
-###exp(expr)
+### exp(expr)
 
 此函数返回自然数 e 的 expr 次幂。
 
@@ -66,7 +66,7 @@ The cosine of 60.000000 degrees is 0.500000.
 The exponential value of 5.000000 is 148.413159.
 ```  
 
-###int(expr)  
+### int(expr)  
 
 此函数返回数值 expr 的整数部分。示例如下：  
 
@@ -85,7 +85,7 @@ The exponential value of 5.000000 is 148.413159.
 Truncated value = 5
 ```  
 
-###log(expr)  
+### log(expr)  
 
 此函数计算 expr 自然对数。 
 
@@ -104,7 +104,7 @@ Truncated value = 5
 log(5.500000) = 1.704748
 ```  
 
-###rand
+### rand
 
 rand 函数返回一个大于等于 0 小于 1 的随机数 N（0<= N < 1）。示例如下：  
 
@@ -124,7 +124,7 @@ Random num2 = 0.291066
 Random num3 = 0.845814
 ```   
 
-###sin(expr)  
+### sin(expr)  
 
 正弦函数返回角度 expr  的正弦值，角度以弧度为单位。示例如下：  
 
@@ -144,7 +144,7 @@ Random num3 = 0.845814
 The sine of 30.000000 degrees is 0.500000.
 ```   
 
-###sqrt(expr)  
+### sqrt(expr)  
 
 此函数计算 expr 的平方根。
 
@@ -163,7 +163,7 @@ The sine of 30.000000 degrees is 0.500000.
 sqrt(1024.000000) = 32.000000
 ```   
 
-###srand([expr])  
+### srand([expr])  
 
 此函数使用种子值生成随机数，数值　expr 作为随机数生成器的种子值。如果没有指定 expr 的值则函数默认使用当前系统时间作为种子值。  
 
@@ -183,11 +183,11 @@ srand() = 1
 srand(10) = 1417959587
 ``` 
 
-##字符串函数  
+## 字符串函数  
 
 AWK 提供了下面所示的字符串操作函数：  
 
-###asort(arr,[, d [,how] ])
+### asort(arr,[, d [,how] ])
 
 asort 函数使用 GAWK 值比较的一般规则排序 arr 中的内容，然后用以 1 开始的有序整数替换排序内容的索引。  
 
@@ -224,7 +224,7 @@ Three
 Two
 ```  
 
-###asorti(arr,[, d [,how] ])  
+### asorti(arr,[, d [,how] ])  
 
 asorti 函数的行为与 asort 函数的行为很相似，二者的差别在于  aosrt 对数组的值排序，而 asorti 对数组的索引排序。  
 
@@ -252,7 +252,7 @@ Three
 Two
 ```  
 
-###gsub(regx,sub, string)  
+### gsub(regx,sub, string)  
 
 gsub 是全局替换( global substitution )的缩写。它将出现的子串（sub）替换为 regx。第三个参数 string 是可选的，默认值为 $0，表示在整个输入记录中搜索子串。  
 
@@ -275,7 +275,7 @@ String before replacement = Hello, World
 String after replacement = Hello, Jerry
 ```  
 
-###index(str,sub)  
+### index(str,sub)  
 
 index 函数用于检测字符串 sub 是否是 str 的子串。如果 sub 是 str 的子串，则返回子串 sub 在字符串 str 的开始位置；若不是其子串，则返回 0。str 的字符位置索引从 1 开始计数。  
 
@@ -296,7 +296,7 @@ index 函数用于检测字符串 sub 是否是 str 的子串。如果 sub 是 s
 Substring "Two" found at 5 location.
 ```  
 
-###length(str)  
+### length(str)  
 
 length 函数返回字符串的长度。  
 
@@ -314,7 +314,7 @@ length 函数返回字符串的长度。
 Length = 16
 ``` 
 
-###match(str, regex)  
+### match(str, regex)  
 
 match 返回正则表达式在字符串 str 中第一个最长匹配的位置。如果匹配失败则返回0。  
 
@@ -335,7 +335,7 @@ match 返回正则表达式在字符串 str 中第一个最长匹配的位置。
 Substring "Two" found at 5 location.
 ``` 
 
-###split(str, arr,regex)
+### split(str, arr,regex)
 
 split 函数使用正则表达式 regex 分割字符串 str。分割后的所有结果存储在数组 arr 中。如果没有指定 regex 则使用 FS 切分。  
 
@@ -363,7 +363,7 @@ Three
 Four
 ```  
 
-###sprintf(format,expr-list)  
+### sprintf(format,expr-list)  
 
 sprintf 函数按指定的格式（ format ）将参数列表 expr-list 构造成字符串然后返回。  
 
@@ -381,7 +381,7 @@ sprintf 函数按指定的格式（ format ）将参数列表 expr-list 构造�
 Hello, World !!!
 ```  
 
-###strtonum(str)  
+### strtonum(str)  
 
 strtonum 将字符串 str 转换为数值。 如果字符串以 0 开始，则将其当作十进制数；如果字符串以 0x 或 0X 开始，则将其当作十六进制数；否则，将其当作浮点数。  
 
@@ -401,7 +401,7 @@ Octal num = 83
 Hexadecimal num = 291
 ```  
 
-###sub(regex,sub,string)  
+### sub(regex,sub,string)  
 
 sub 函数执行一次子串替换。它将第一次出现的子串用 regex  替换。第三个参数是可选的，默认为 $0。  
 
@@ -424,7 +424,7 @@ String before replacement = Hello, World
 String after replacement = Hello, Jerry
 ```  
 
-###substr(str, start, l)  
+### substr(str, start, l)  
 
 substr 函数返回 str 字符串中从第 start 个字符开始长度为 l 的子串。如果没有指定 l 的值，返回 str 从第 start 个字符开始的后缀子串。 
 
@@ -443,7 +443,7 @@ substr 函数返回 str 字符串中从第 start 个字符开始长度为 l 的�
 Substring = Hello
 ```  
 
-###tolower(str)  
+### tolower(str)  
 
 此函数将字符串 str 中所有大写字母转换为小写字母然后返回。注意，字符串 str 本身并不被改变。    
 
@@ -461,7 +461,7 @@ Substring = Hello
 Lowercase string = hello, world !!!
 ``` 
  
-###toupper(str)  
+### toupper(str)  
 
 此函数将字符串 str 中所有小写字母转换为大写字母然后返回。注意，字符串 str 本身不被改变。    
 
@@ -479,11 +479,11 @@ Lowercase string = hello, world !!!
 Uppercase string = HELLO, WORLD !!!
 ```  
 
-##时间函数
+## 时间函数
 
 AWK 提供了如下的内置时间函数：  
 
-###systime  
+### systime  
 
 此函数返回从 Epoch 以来到当前时间的秒数（在 POSIX 系统上，Epoch 为1970-01-01 00:00:00 UTC）。  
 
@@ -499,7 +499,7 @@ AWK 提供了如下的内置时间函数：
 Number of seconds since the Epoch = 1418574432
 ``` 
 
-###mktime(dataspec)  
+### mktime(dataspec)  
 
 此函数将字符串 dataspec 转换为与 systime 返回值相似的时间戳。 dataspec 字符串的格式为 YYYY MM DD HH MM SS。
 
@@ -515,7 +515,7 @@ Number of seconds since the Epoch = 1418574432
 Number of seconds since the Epoch = 1418604610
 ```  
 
-###strftime([format [, timestamp[, utc-flag]]])  
+### strftime([format [, timestamp[, utc-flag]]])  
 
 此函数根据 format 指定的格式将时间戳 timestamp 格式化。  
 
@@ -533,7 +533,7 @@ Time = 12/14/2014 22:08:42
 
 下面是 AWK 支持的不同的日期格式说明：  
 | 日期格式规范    | 描述           |   
-|:-------------:|:-------------:| 
+|:-------------|:-------------| 
 | ％a           | 星期缩写(Mon-Sun)。 |  
 | %A            | 星期全称（Monday-Sunday）。      |
 | %b            | 月份缩写（Jan）。     |  
@@ -571,11 +571,11 @@ Time = 12/14/2014 22:08:42
 |%z             |时区，表示格式为+HHMM（例如，格式要求生成的 RFC 822或者 RFC 1036 时间头）|  
 |%Z             |时区名称或缩写，如果时区待定则无输出。|
 
-##位操作函数
+## 位操作函数
 
 AWK 提供了如下的内置的位操作函数：  
 
-###and
+### and
 
 执行位与操作。  
 
@@ -594,7 +594,7 @@ AWK 提供了如下的内置的位操作函数：
 (10 AND 6) = 2
 ```  
   
-###compl  
+### compl  
 
 按位求补。 
 
@@ -612,7 +612,7 @@ AWK 提供了如下的内置的位操作函数：
 compl(10) = 9007199254740981
 ```  
 
-###lshift  
+### lshift  
 
 左移位操作。  
 
@@ -630,7 +630,7 @@ compl(10) = 9007199254740981
 lshift(10) by 1 = 20
 ```  
   
-###rshift  
+### rshift  
 
 向右移位操作。 
 
@@ -648,7 +648,7 @@ lshift(10) by 1 = 20
 rshift(10) by 1 = 5
 ```  
 
-###or
+### or
 
 按位或操作。  
 
@@ -686,11 +686,11 @@ rshift(10) by 1 = 5
 (10 bitwise xor 6) = 12
 ```  
   
-##其它函数  
+## 其它函数  
 
 其它函数中主要包括:  
 
-###close(expr)  
+### close(expr)  
 
 关闭管道的文件。  
 
@@ -711,14 +711,15 @@ rshift(10) by 1 = 5
 HELLO, WORLD !!!
 ```  
 
-脚本的内容看上去很神秘吗？让我们来揭开它神秘的面纱。  
-第一条语句 cmd = "tr [a-z] [A-Z]" 在　AWK 中建立了一个双向的通信通道。
-第二条语句 print 为 tr 命令提供输入。&| 表示双向通信。  
-第三条语句 close(cmd, "to") 完成执行后关闭 to 进程。  
-第四条语句 cmd |& getline out 使用 getline 函数将输出存储到 out 变量中。  
-接下来的输出语句打印输出的内容，最后 close 函数关闭 cmd。
+脚本的内容看上去很神秘吗？让我们来揭开它神秘的面纱。
 
-###delete  
+- 第一条语句 cmd = "tr [a-z] [A-Z]" 在　AWK 中建立了一个双向的通信通道。
+- 第二条语句 print 为 tr 命令提供输入。&| 表示双向通信。  
+- 第三条语句 close(cmd, "to") 完成执行后关闭 to 进程。  
+- 第四条语句 cmd |& getline out 使用 getline 函数将输出存储到 out 变量中。  
+- 接下来的输出语句打印输出的内容，最后 close 函数关闭 cmd。
+
+### delete  
 
 delete 被用于从数组中删除元素。下面的例子演示了如何使用 delete：  
 
@@ -758,7 +759,7 @@ Three
 Four
 ```  
 
-###exit  
+### exit  
 
 该函数终止脚本执行。它可以接受可选的参数 expr 传递 AWK  返回状态。示例如下：  
 
@@ -778,7 +779,7 @@ Four
 Hello, World !!!
 ```  
 
-###flush  
+### flush  
 
 flush 函数用于刷新打开文件或管道的缓冲区。 使用方法如下：  
 
@@ -788,7 +789,7 @@ fflush([output-expr])
 
 如果没有提供 output-expr，fflush 将刷新标准输出。若 output-epxr 是空字符串 ("")，fflush 将刷新所有打开的文件和管道。 
 
-###getline  
+### getline  
 
 getline 函数读入下一行。示例中使用 getline 从文件 marks.txt 中读入一行并输出：  
 
@@ -804,12 +805,9 @@ getline 函数读入下一行。示例中使用 getline 从文件 marks.txt 中�
 5)	Hari	History	89
 ```  
 
-脚本看似工作正常，但是第一行去哪儿了呢？让我们理一下整个过程。  
-刚启动时，AWK 从文件 marks.txt 中读入一行存储到变量 $0 中。  
-在下一条语句中，我们使用 getline 读入下一行。 因此 AWK 读入第二行并存储到 $0 中。  
-最后，AWK 使用 print 输出第二行的内容。这个过程一直到文件结束。  
+脚本看似工作正常，但是第一行去哪儿了呢？让我们理一下整个过程。刚启动时，AWK 从文件 marks.txt 中读入一行存储到变量 $0 中。在下一条语句中，我们使用 getline 读入下一行。 因此 AWK 读入第二行并存储到 $0 中。最后，AWK 使用 print 输出第二行的内容。这个过程一直到文件结束。  
 
-###next  
+### next  
 
 next 停止处理当前记录，并且进入到下一条记录的处理过程。下面的例子中，当模式串匹配成功后程序并不执行任何操作：  
 
@@ -826,7 +824,7 @@ next 停止处理当前记录，并且进入到下一条记录的处理过程。
 5)	Hari	History	89
 ```  
 
-###nextfile  
+### nextfile  
 
 nextfile 停止处理当前文件，从下一个文件第一个记录开始处理。下面的的例子中，匹配成功时停止处理第一个文件转而处理第二个文件：  
 首先创建两个文件。 file1.txt 内容如下:  
@@ -863,7 +861,7 @@ file2:str3
 file2:str4
 ```  
 
-###return   
+### return   
 
 return 用于从用户自定义的函数中返回值。请注意，如果没有指定返回值，那么的返回值是未定义的。下面的例子演示了 return 的使用方法：  
 首先，创建文件 functions.awk，内容如下：  
@@ -888,7 +886,7 @@ BEGIN {
 10 + 20 = 30
 ``` 
 
-###system  
+### system  
 
 system 函数可以执行特定的命令然后返回其退出状态。返回值为 0 表示命令执行成功；非 0 表示命令执行失败。下面的示例中执行 Date 显示当前的系统时间，然后输出命令的返回状态：  
 
