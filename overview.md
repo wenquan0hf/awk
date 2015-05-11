@@ -9,7 +9,7 @@ AWK 是一种解释执行的编程语言。它非常的强大，被设计用来�
 - **GAWK**—— GAWK 即 GNU AWK，所有的 GNU/Linux 发行版都包括 GAWK，且 GAWK 完全兼容 AWK 与 NAWK。
 
 
-# 部分 AWK 的典型应用场景  
+## 部分 AWK 的典型应用场景  
 
 AWK 可以做非常多的工作。 下面只是其中的一小部分： 
 
