@@ -133,7 +133,11 @@ Continue 语句用于在循环体内部结束本次循环，从而直接进入�
 Exit 用于结束脚本程序的执行。该函数接受一个整数作为参数表示 AWK 进程结束状态。 如果没有提供该参数，其默认状态为 0 。下面例子中当和大于 50 时结束 AWK 程序。  
 
 ```
-[jerry]$ awk 'BEGIN {sum = 0; for (i = 0; i < 20; ++i) { sum += i; if (sum > 50) exit(10); else print "Sum =", sum } }'
+[jerry]$ awk 'BEGIN {
+    sum = 0; for (i = 0; i < 20; ++i) {
+        sum += i; if (sum > 50) exit(10); else print "Sum =", sum 
+                                     } 
+                    }'
 ```   
 
 执行上面的命令可以得到如下的结果：  
