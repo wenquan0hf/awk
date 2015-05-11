@@ -1,4 +1,4 @@
-#AWK——基本语法  
+# 基本语法  
 
 AWK 使用起来非常方便。我们可以直接通过命令行的方式为 AWK 程序提供 AWK 命令，也可以使用包括 AWK 命令的脚本文件。这篇教程将使用合适的例子分别介绍这两种使用 AWK 的方法:    
 
@@ -10,7 +10,7 @@ AWK 使用起来非常方便。我们可以直接通过命令行的方式为 AWK
 awk [options] file ...
 ```  
 
-###例子  
+### 例子  
 
 假设我们有一个名为**marks.txt**的文件需要处理，文件中的内容如下：  
   
@@ -38,7 +38,7 @@ awk [options] file ...
 5)    Hari     History    89  
 ```  
 
-##AWK 程序文件  
+## AWK 程序文件  
 
 接下来讲解的是另外一种提供 AWK 命令的方式——通过脚本文件提供： 
  
@@ -72,7 +72,7 @@ awk [option] -f file ....
 
 在命令行环境下，AWK 支持如下的标准选项： 
  
-###-v 选项
+### -v 选项
 
 这个选项可以为变量赋值。它允许在程序执行之前为变量赋值。下面是一个 -v 选项使用的示例程序：
   
@@ -86,7 +86,7 @@ awk [option] -f file ....
 Name = Jerry
 ```  
 
-###--dump-variables[=file] 选项  
+### --dump-variables[=file] 选项  
 
 此选项会将全局变量及相应值按序输出到指定文件中。默认的输出文件名是 **awkvars.out**。  
 
@@ -124,7 +124,7 @@ SUBSEP: "\034"
 TEXTDOMAIN: "messages"
 ```  
 
-###--help 选项  
+### --help 选项  
 
 此选项将帮助消息转出到标准输出中。 
  
@@ -178,11 +178,11 @@ awk: cmd. line:1: warning: source file does not end in newline
 awk: warning: no program text at all!
 ```  
 
-###--posix 选项  
+### --posix 选项  
 
 这个选项会打开严格 POSIX 兼容性审查。 如此，所有共同的以及 GAWK 特定的扩展将被设置为无效。  
 
-###--profile[=file] 选项  
+### --profile[=file] 选项  
 
 这个选项会将程序文件以一种很优美的方式输出（译注：用于格式化 awk 脚本文件）。默认输出文件是 **awkprof.out**。示例如下：  
 
@@ -216,11 +216,11 @@ awk: warning: no program text at all!
 	}
 ``` 
 
-###--traditional 选项  
+### --traditional 选项  
 
 此选项用于禁止 GAWK 相关的扩展。 
  
-###--version 选项  
+### --version 选项  
 
 此选项显示 AWK 程序的版本信息。  
 
