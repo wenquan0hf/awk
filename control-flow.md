@@ -50,7 +50,10 @@ else
 其中，条件为真时执行 action-1，条件为假时执行 action-2。下面是使用该语句判断数字是否为偶数的例子：  
 
 ```
-[jerry]$ awk 'BEGIN {num = 11; if (num % 2 == 0) printf "%d is even number.\n", num; else printf "%d is odd number.\n", num }'
+[jerry]$ awk 'BEGIN {num = 11; 
+if (num % 2 == 0) printf "%d is even number.\n", num; 
+else printf "%d is odd number.\n", num 
+                    }'
 ```  
 
 执行上面的操作可以得到如下的结果：   
