@@ -5,6 +5,7 @@
   - [基本语法](basic-syntax.md)
   - [基本示例](basic-examples.md)
   - [内置变量](built-in-variables.md)
+  - [操作符](operators.md)
   - [正则表达式](regular-expressions.md)
   - [数组](arrays.md)
   - [控制流](control-flow.md)
