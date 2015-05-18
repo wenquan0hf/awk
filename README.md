@@ -10,4 +10,4 @@
 
 你需要提前对 GNU/Linux 以及 shell 脚本编程有一个基本的了解。
 
-官方英文原版：http://www.tutorialspoint.com/awk/awk_overview.htm
+
